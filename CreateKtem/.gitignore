@@ -1,0 +1,25 @@
+# Default ignored files
+/shelf/
+/workspace.xml
+# Editor-based HTTP Client requests
+/httpRequests/
+# Datasource local storage ignored files
+/dataSources/
+/dataSources.local.xml
+
+# ignore .idea folder
+.idea/
+__pycache__/
+GoogleChromePortable/
+GoogleChromePortable0/
+GoogleChromePortable1/
+GoogleChromePortable2/
+anycaptcha/'=
+anticaptcha-plugin_v0.63/
+New folder/
+*.crx
+*.zip
+*.exe
+.pem
+proxy/
+tempCodeRunnerFile.py
