@@ -28,8 +28,8 @@ namespace CreateKtem
         private void button1_Click(object sender, EventArgs e)
         {
 
-            string email = "ritavn2lbessie@outlook.com";
-            string pwd = "tove3tObj";
+            string email = "";
+            string pwd = "";
             string emailT = "bhy32994@nezid.com";
             string randomPwd = pwd + "@A1";
             
@@ -66,11 +66,11 @@ namespace CreateKtem
                 chromeDriver.FindElement(By.XPath("//*[@id=\"Password\"]")).SendKeys(randomPwd);
                 chromeDriver.FindElement(By.XPath("//*[@id=\"ConfirmPassword\"]")).SendKeys(randomPwd);
                 var submited = chromeDriver.FindElement(By.XPath("/html/body/div/div/div/div/div[1]/h4"), 120);
-                Assert.AreEqual("ThÙng b·o", submited.Text);
+                Assert.AreEqual("Th√¥ng b√°o", submited.Text);
                 bool load = false;
                 while (load != true)
                 {
-                    if (submited.Text == "ThÙng b·o")
+                    if (submited.Text == "Th√¥ng b√°o")
                     {
                         Mail.Verify(email, pwd, "imap-mail.outlook.com", 993);
                         load = true;
