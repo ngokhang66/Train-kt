@@ -52,7 +52,7 @@ web.get('https://antcpt.com/blank.html')
 acp_api_send_request(
     web,
     'setOptions',
-    {'options': {'antiCaptchaApiKey': '86549d89f32cec3fef05cfb723a0fd62'}}
+    {'options': {'antiCaptchaApiKey': ''}}
 )
 time.sleep(3)
 # Go to the test form with reCAPTCHA 2
