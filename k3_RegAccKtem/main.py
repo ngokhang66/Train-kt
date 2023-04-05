@@ -14,7 +14,7 @@ from anticaptchaofficial.recaptchav2proxyless import *
 FolderPath = 'C:\\Users\\Kang\\PycharmProjects\\RegAccKtem'
 
 usr = 'nancybyxjane@hotmail.com'
-pwd = 'bmodkzHli5'
+pwd = 'pass'
 
 randomPwd = pwd + "@A|"
 print(usr + " | "+ randomPwd)
