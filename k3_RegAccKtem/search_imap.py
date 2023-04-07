@@ -22,44 +22,17 @@ def search_imap(usr, pwd):
     mail.login(usr, pwd)
     mail.list()
     mail.select('inbox')  # specify inbox
-    # mail.select('register') # specify label
 
-    # typ, [data] = mail.search(None, "UNSEEN")
     typ, [data] = mail.search(None, "(ALL)")
 
-    # print("searched")
-    # print(typ)
-    # pp.pprint(data.split())
-
-    # check
-    # if typ == "OK":
-    #     if data != '':
-    #         print("New Mail")
-    #     else:
-    #         print("Non")
-
-    # for each mail searched
-    # for num in data.split():
-    # get last mail
+ 
     for num in data.split()[-1:]:
-        # print("START " + str(num) + "--------------------------------------------------")
 
         # fetch whole message as RFC822 format
         result, d = mail.fetch(num, "(RFC822)")
 
-        # # save to file
-        # f = open("mail_" + str(num) + ".txt", "bw")
-        # f.write(d[0][1])
-        # f.close()
-
-        # print("####################################")
-
         msg = email2Text(d[0][1])
 
-        # print("------------------------------------")
-        # myprint(msg["subject"])
-        # myprint(msg["date"])
-        # myprint(msg["from"])
         return msg["body"]
 
     # closing
@@ -80,13 +53,8 @@ def email2Text(rfc822mail):
     mail_value["from"] = header_decode(msg_data.get('From'))
     mail_value["date"] = header_decode(msg_data.get('Date'))
     mail_value["subject"] = header_decode(msg_data.get('Subject'))
-
-    # print( mail_value["date"] )
-    # print( mail_value["from"] )
-    # print( mail_value["subject"] )
-
+    
     # Get Body
-    # print("--- body ---")
     mail_value["body"] = ""
     if msg_data.is_multipart():
         for part in msg_data.walk():
