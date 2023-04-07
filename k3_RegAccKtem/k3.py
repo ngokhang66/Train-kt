@@ -9,7 +9,7 @@ import re
 
 def send_recapcha(data_sitekey, page_url):
     API_ENDPOINT = "http://azcaptcha.com/in.php"
-    API_KEY = "wfhxr6mvfpr7ncl8yykvb2gxt93bwhp4"
+    API_KEY = ""
     data = {"key":API_KEY, "method": "userrecaptcha", "googlekey": data_sitekey, "pageurl": page_url, "invisible": 1, "json": "1"}
     r = requests.post(url = API_ENDPOINT, data = data)
     pastebin_url = r
@@ -18,7 +18,7 @@ def send_recapcha(data_sitekey, page_url):
 
 def get_solve(id):
     API_ENDPOINT = "http://azcaptcha.com/res.php"
-    API_KEY = "wfhxr6mvfpr7ncl8yykvb2gxt93bwhp4"
+    API_KEY = ""
     data = {"key":API_KEY, "action": "get", "id": id, "json": "0"}
     r = requests.post(url = API_ENDPOINT, data = data)
     print(r.text)
