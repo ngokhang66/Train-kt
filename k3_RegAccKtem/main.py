@@ -17,10 +17,8 @@ usr = 'nancybyxjane@hotmail.com'
 pwd = 'pass'
 
 randomPwd = pwd + "@A|"
-print(usr + " | "+ randomPwd)
-usrTest = random_pwd() +"@hotmail.com"
-# randomPwd = random_pwd()
-# print(randomPwd)
+
+
 def acp_api_send_request(driver, message_type, data={}):
     message = {
 		# this receiver has to be always set as antiCaptchaPlugin
@@ -41,7 +39,7 @@ options = Options()
 options.binary_location = FolderPath + '\\GoogleChromePortable\\GoogleChromePortable.exe'
 options.add_argument('--user-data-dir=' + FolderPath + '\\GoogleChromePortable\\Data\\profile\\')
 options.add_argument('--profile-directory=' + 'Profile 0')
-options.add_argument('--blink-settings=imagesEnabled=false')  # ko hinh anh
+options.add_argument('--blink-settings=imagesEnabled=false')
 # options.add_argument("--incognito")
 options.add_extension(FolderPath + '\\anticaptcha.crx')
 
@@ -76,22 +74,21 @@ try:
 
     bodyMail = search_imap(usr, pwd)
     time.sleep(3)
-    print(bodyMail)
-
-    # match = re.search(r'\(https?://[^)]+', str(bodyMail))
-    # confirm_url = match.group()[1:]
-    # print(confirm_url)
-    # web.get(confirm_url)
-    # time.sleep(1)
-    # web.get("https://howkteam.vn/account/login")
-    # print("login")
-    # print(usr + " | " + randomPwd)
-    # InputMail = WebDriverWait(web, 25).until(EC.presence_of_element_located((By.XPATH, '//*[@id="Email"]')))
-    # InputMail.send_keys(usr)
-    # InputPwd = WebDriverWait(web, 25).until(EC.presence_of_element_located((By.XPATH, '//*[@id="Password"]')))
-    # InputPwd.send_keys(randomPwd)
-    # WebDriverWait(web, 15).until(
-    #     EC.presence_of_element_located((By.XPATH, '//*[@id="loginForm"]/fieldset/div[4]/button'))).click()
+    
+    match = re.search(r'\(https?://[^)]+', str(bodyMail))
+    confirm_url = match.group()[1:]
+    print(confirm_url)
+    web.get(confirm_url)
+    time.sleep(1)
+    web.get("https://howkteam.vn/account/login")
+    print("login")
+    print(usr + " | " + randomPwd)
+    InputMail = WebDriverWait(web, 25).until(EC.presence_of_element_located((By.XPATH, '//*[@id="Email"]')))
+    InputMail.send_keys(usr)
+    InputPwd = WebDriverWait(web, 25).until(EC.presence_of_element_located((By.XPATH, '//*[@id="Password"]')))
+    InputPwd.send_keys(randomPwd)
+    WebDriverWait(web, 15).until(
+        EC.presence_of_element_located((By.XPATH, '//*[@id="loginForm"]/fieldset/div[4]/button'))).click()
 
     time.sleep(900)
     # web.quit()
