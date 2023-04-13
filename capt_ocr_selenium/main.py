@@ -1,6 +1,6 @@
 import csv
 import time
-from ocr_captcha import *
+from ocr_model import *
 from selenium import webdriver
 from selenium.webdriver.chrome.service import Service
 from selenium.webdriver.chrome.options import Options
