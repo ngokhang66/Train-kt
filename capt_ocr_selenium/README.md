@@ -1,6 +1,6 @@
 # Solve text captcha
 # Description
-This code use selenium and model DL from Keras to solve text captcha to any website. But you must have data for train your model. After that, you can use this model to solve text captcha from the website you want to do.
+This code use selenium and model DL from Keras to solve text captcha on any website. But you must have data for train your model. After that, you can use this model to solve text captcha from the website you want to do.
 
 # How to setup
 1. Collect img data from website you want
