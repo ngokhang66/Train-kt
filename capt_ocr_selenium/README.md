@@ -8,3 +8,5 @@ This code use selenium and model DL from Keras to solve text captcha to any webs
 2. Train model from Keras and import this model to orc_model.py
 3. Config url, get location img on website you want
 4. Run
+# Reference
+1. https://keras.io/getting_started/
